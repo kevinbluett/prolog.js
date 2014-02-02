@@ -1,17 +1,13 @@
 var EventWaiter = function() {
     this.waiting = 0;
     this.enabled = true;
-
-    // Add some listeners.
-    //this.ee.addListener('create-user', sendCreateRequest);
-    //this.ee.addListener('request-complete', displayResponse);  
 };
 
 EventWaiter.prototype = new EventEmitter();
 
 EventWaiter.prototype.enable = function() {
     if ( !this.waiting ) {
-        events.emitEvent( 'complete' );
+        this.emitEvent( 'complete' );
     }
 };
 
@@ -33,9 +29,9 @@ EventWaiter.prototype.createCallback = function() {
         for ( var i in arguments ) {
             args.push( arguments[ i ] );
         }
-        events.emitEvent.apply( self, args );
+        this.emitEvent.apply( self, args );
         if ( self.enabled && !self.waiting ) {
-            events.emitEvent( 'complete' );
+            this.emitEvent( 'complete' );
         }
     };
 };

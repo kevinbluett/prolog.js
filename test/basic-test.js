@@ -16,7 +16,7 @@ buster.testCase("A module", {
 	    var basic = "woman(mia). \nwoman(jody). \nwoman(yolanda). \nplaysAirGuitar(jody).\n party().\n\n"
 
 		runPrologQuery(stl+basic, function(prover){
-			prover.prove("party.", function(data){
+			prover.prove("party1().", function(data){
 				console.log( "Penguins live in: " + Object.keys(data) );
 				buster.assert.equals(true, true);
 			});
