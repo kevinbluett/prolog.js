@@ -13,7 +13,7 @@ buster.testCase("A module", {
 	        }
 	    };
 
-	    var basic = "woman(mia). \nwoman(jody). \nwoman(yolanda). \nplaysAirGuitar(jody).\n party().\n\n"
+	    var basic = "woman(mia). \nwoman(jody). \nwoman(yolanda). \nplaysAirGuitar(jody).\n party .\n\n"
 
 		runPrologQuery(stl+basic, function(prover){
 			prover.prove("party1().", function(data){

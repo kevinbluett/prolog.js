@@ -73,6 +73,12 @@ parser.getTerm = function( tokenizer ) {
     tokenizer.consume();
 
     if ( tokenizer.current != "(" ) {
+        if (tokenizer.current == ".") {
+
+        }else{
+            return new Term(name, []);
+        }
+
         // fail shorthand for fail(), ie, fail/0
         if (name == "fail") {
             return new Term(name, []);
